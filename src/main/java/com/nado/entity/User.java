@@ -1,12 +1,11 @@
 package com.nado.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -39,4 +38,18 @@ public class User {
     public enum Role {
         USER, ADMIN
     }
+
+    @OneToMany(mappedBy = "user")
+    private Set<Post> posts = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_followers",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "follower_id")}
+    )
+    private Set<User> followers = new HashSet<>();
+
+    @ManyToMany(mappedBy = "followers")
+    private Set<User> following = new HashSet<>();
 }
