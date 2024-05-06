@@ -13,6 +13,8 @@ import java.util.Set;
 public class User {
 
     @Id
+    private Long id;
+
     @Column(nullable = false, unique = true)
     private String email;
 
