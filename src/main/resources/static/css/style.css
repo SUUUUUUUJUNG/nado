@@ -1,0 +1,124 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: white;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background: url('/img/main.webp') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero input[type="text"] {
+    margin-top: 15px;
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+#destinations,
+#tips,
+#planner {
+    background-color: white;
+    padding: 60px 20px;
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.destinations-grid,
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.destination-card,
+.tip-card {
+    background-color: #e7f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+.destination-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#planner .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a img {
+    width: 20px;
+}
