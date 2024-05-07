@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>나들이부터 데이트까지</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/common.css" type="text/css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            background-color: #E8FAE8;
+        }
+
+        /* 전체 컨테이너를 수평 정렬을 위해 flex로 변경 */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+        }
+
+        /* 제목과 설명, 이미지, 버튼을 담을 메인 컨테이너 추가 */
+        .main-container {
+            display: flex;
+            flex-direction: row; /* 가로 배치로 변경 */
+            justify-content: space-between;
+            align-items: flex-end; /* 컨텐츠의 하단을 정렬 */
+            width: 60%;
+            margin: 5px auto 10px;
+        }
+
+        .header {
+            text-align: left;
+            max-width: 50%;
+        }
+
+        .color-green {
+            color: #28A745;
+        }
+
+        .subtext {
+            font-size: 15px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .btn-green {
+            background-color: #A0E9A0;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 5px; /* 버튼과 설명의 하단을 정렬하기 위한 마진 */
+        }
+
+        /* 캐릭터 이미지와 버튼을 묶는 섹션 */
+        .character-container {
+            text-align: center;
+        }
+
+        .img-responsive {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* 캐러셀 길게 설정 */
+        .carousel-container {
+            width: 60%;
+            margin: 10px auto;
+        }
+
+        .header-font-size {
+            font-size: 70px;
+        }
+
+        /* 네비게이션 바 내부 이미지에 대한 스타일 */
+        .navbar-logo {
+            max-height: 50px; /* 네비게이션 바의 높이 */
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        /* 로고와 오른쪽 메뉴를 각각의 flex 컨테이너로 나누어 배치 */
+        .navbar-left {
+            display: flex;
+            justify-content: flex-start;
+            width: 20%;
+        }
+
+        .navbar-right {
+            display: flex;
+            justify-content: flex-end;
+            width: 80%;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px; /* 높이를 원하는 크기로 지정하세요 */
+            object-fit: cover; /* 이미지를 자르거나 늘리지 않고 비율에 맞춰 크기를 조절 */
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom ">
+    <div class="container-fluid container">
+        <a class="navbar-brand navbar-left" href="#" ><img src="/img/icon/logo.png" class="navbar-logo" style="display: inline"></a>
+        <div class="navbar-right">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Share</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/user-male-circle.png"
+                                 alt="User Icon"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- 메인 컨테이너를 추가하여 요소들의 위치 변경 -->
+<div class="main-container">
+    <div class="header">
+        <p class="header-font-size">나들이부터 데이트까지<br>
+            <span class="color-green">나</span>들이 <span class="color-green">도</span>우미</p>
+        <div class="subtext">
+            여름철 시원한 바람이 부는 날, 시원한 아이스크림 한 컵과 함께 햇살 가득한 나들이로 떠나볼까요?<br>
+            당신의 위치와 날씨를 고려하여 자동으로 가장 즐거운 <span style="color: #28A745;">나들이 코스</span>를 추천해드립니다.
+        </div>
+    </div>
+    <!-- 캐릭터 이미지와 버튼을 하나로 묶는 컨테이너 -->
+    <div class="character-container">
+        <img src="/img/nadoring.webp" class="img-responsive">
+        <div class="button">
+            <button class="btn-green">나들이 코스 생성하기</button>
+        </div>
+    </div>
+</div>
+
+<!-- 캐러셀 컨테이너 -->
+<div class="carousel-container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/carousel/carousel1.jpg" class="d-block w-100"
+                     alt="캐러셀 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/carousel/carousel2.jpg" class="d-block w-100"
+                     alt="캐러셀 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/carousel/carousel3.jpg" class="d-block w-100"
+                     alt="캐러셀 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
