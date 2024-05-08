@@ -1,8 +1,10 @@
 package com.nado.entity;
 
+import com.nado.dto.UserCreateRequestDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,9 +12,11 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
@@ -32,6 +36,19 @@ public class User {
 
     @Column(nullable = false)
     private Boolean emailVerified;
+
+    public User(UserCreateRequestDTO userCreateRequestDTO) {
+        email = userCreateRequestDTO.getEmail();
+        password = userCreateRequestDTO.getPassword();
+        nickname = userCreateRequestDTO.getNickname();
+        status = Status.ACTIVE;
+        role = Role.USER;
+        emailVerified = userCreateRequestDTO.getEmailVerified();
+    }
+
+    public User() {
+
+    }
 
     public enum Status {
         ACTIVE, INACTIVE, BANNED
